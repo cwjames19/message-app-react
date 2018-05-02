@@ -27,10 +27,12 @@ class MessageList extends Component {
   }
 
   render() {
+    const messageViews = this.state.messages.map( (message, index) => <MessageView message={message} key={index} /> );
+
     return(
       <div>
         <h1>List of Messages</h1>
-        { this.state.messages.map( message => <MessageView message={message} />) }
+        { messageViews }
       </div>
     );
   }
